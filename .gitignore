@@ -1,0 +1,13 @@
+node_modules/
+dist/
+output/
+coverage/
+.env
+.env.*
+*.tgz
+*.zip
+*.log
+*.geojson
+*.pem
+*.key
+.DS_Store

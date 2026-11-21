@@ -1,0 +1,57 @@
+{
+  "name": "roam-data-sdk",
+  "version": "0.1.0",
+  "description": "Offline TypeScript utilities for pet location datasets",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "SECURITY.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "check": "npm run typecheck && npm test && node scripts/check-release.mjs",
+    "demo": "npm run build && node examples/demo.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  },
+  "keywords": [
+    "sdk",
+    "typescript",
+    "offline",
+    "gps",
+    "pet",
+    "location-history"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elenaScripts/roam-data-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elenaScripts/roam-data-sdk/issues"
+  },
+  "homepage": "https://github.com/elenaScripts/roam-data-sdk#readme"
+}
