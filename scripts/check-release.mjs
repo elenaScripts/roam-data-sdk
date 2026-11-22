@@ -13,15 +13,15 @@ const reviewedImages = new Map([
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
   ['docs/assets/sdk-overview.png', {
-    sha256: '8a214ddac4919c9a3e4a6bd55142b84fa45ca5236c45aa2ca5430d3dcab1f4f6',
+    sha256: '477bbf06dc201299a7670b19134ce7c30e0b8209f8236ef7d9bae2a40cfc617f',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
   ['docs/assets/sdk-workflow.gif', {
-    sha256: 'dba13d333003471fda26fb9f5c95fd1bed83935c270da3e999dc90022e83ac9d',
+    sha256: '01726d4065b922a94e06603d0e39230fa91440a7dacb362005e9256aca1c6a23',
     signature: Buffer.from('GIF89a'),
   }],
   ['docs/assets/sdk-workflow.png', {
-    sha256: 'a80facf01b0a4888c5fddca240616d1671676e3d04d4cf420b630ec821d01f17',
+    sha256: '81fdb4ef0249c4068ea2a2fc6aa74e057337dcde6f185720dbddf99b95819c8f',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
 ]);

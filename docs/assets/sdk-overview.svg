@@ -1,29 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1200" viewBox="0 0 1400 840"><title>Roam data SDK workflow</title><desc>An illustrated dog runs above a schematic location trail. Roam validates and summarizes supplied location data. The synthetic walk example has two points, an estimated distance of 1.112 km, and a ten-minute segment span.</desc>
-<defs></defs>
 <rect width="1400" height="840" fill="#1c2b43"/>
 <g font-family="Avenir Next, Futura, DejaVu Sans, sans-serif" font-weight="500" fill="#f2ecdc">
-  <text x="80" y="117" font-size="27">Offline tools for</text>
-  <text x="80" y="153" font-size="27">dog location data</text>
-  <g font-size="22" fill="#c6c9c6">
-    <text x="80" y="244">Validate</text><text x="210" y="244">Measure</text><text x="350" y="244">Summarize</text>
-  </g>
-  <text x="76" y="632" font-size="119" font-weight="500" letter-spacing="-5">Roam</text>
-  <text x="80" y="709" font-size="61" font-weight="500" letter-spacing="-2">data SDK</text>
-  <text x="80" y="784" font-size="18" fill="#c6c9c6">TypeScript / Node.js</text>
+  <text x="80" y="96" font-size="17" fill="#c6c9c6">TypeScript / Node.js</text>
+  <text x="76" y="207" font-size="110" letter-spacing="-4.5">Roam</text>
+  <text x="80" y="280" font-size="58" letter-spacing="-2">data SDK</text>
+  <text x="80" y="350" font-size="25">Offline tools for</text>
+  <text x="80" y="384" font-size="25">dog location data</text>
+  <text x="80" y="456" font-size="20" fill="#c6c9c6">Validate · Measure · Summarize</text>
 </g>
-<text x="80" y="285" font-family="DejaVu Sans Mono, monospace" font-size="20" fill="#c6c9c6">summarizeDataset(data)</text>
+<text x="80" y="500" font-family="DejaVu Sans Mono, monospace" font-size="19" fill="#c6c9c6">summarizeDataset(data)</text>
 <path d="M700 478 C820 497 1120 458 1255 478" fill="none" stroke="#c6c9c6" stroke-width="1.5" opacity=".55"/>
 <circle cx="700" cy="478" r="4" fill="#c6c9c6"/>
 <g transform="translate(1255 478) scale(.65)">
   <path d="M0 0 C-4 -6 -19 -21 -19 -34 C-19 -60 19 -60 19 -34 C19 -21 4 -6 0 0Z" fill="#d6b375"/>
   <circle cx="0" cy="-35" r="7" fill="#1c2b43"/>
 </g>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="500" font-size="18" fill="#c6c9c6">
-  <text x="965" y="553">Synthetic walk example</text>
-  <text x="965" y="629">Estimated distance</text>
-  <text x="965" y="720">Recorded duration</text>
-</g><g transform="translate(650 -30) scale(1.6)"><path d="M306.3 126.26 Q312.36 124.24 323.98 124.75 Q335.6 125.25 341.66 128.78 Q347.72 132.32 350.25 137.37 Q352.77 142.42 363.88 146.97 Q374.99 151.52 376 154.05 Q377.01 156.57 376 159.09 Q374.99 161.62 370.95 164.65 Q366.91 167.68 356.31 166.67 Q345.7 165.66 353.78 171.22 Q361.86 176.77 360.85 179.8 Q359.84 182.83 353.27 182.32 Q346.71 181.82 340.14 177.78 Q333.58 173.74 328.52 174.25 Q323.47 174.75 315.89 182.83 Q308.32 190.91 305.29 200.5 Q302.26 210.1 310.34 213.63 Q318.42 217.17 350.75 221.71 Q383.07 226.26 384.59 229.8 Q386.1 233.33 382.56 235.86 Q379.03 238.38 371.96 238.38 Q364.89 238.38 347.72 235.35 Q330.55 232.32 345.7 239.39 Q360.85 246.46 369.94 247.98 Q379.03 249.49 380.04 250.5 Q381.05 251.52 380.04 255.06 Q379.03 258.59 370.44 259.6 Q361.86 260.61 345.19 254.04 Q328.53 247.47 306.81 242.93 Q285.09 238.38 279.53 235.35 Q273.98 232.32 259.34 236.36 Q244.69 240.4 233.57 240.4 Q222.46 240.4 213.88 238.38 Q205.29 236.36 190.14 229.29 Q174.99 222.22 167.42 222.22 Q159.84 222.22 149.74 229.29 Q139.64 236.36 130.54 240.91 Q121.45 245.45 102.26 249.5 Q83.07 253.54 66.41 263.13 Q49.74 272.73 44.19 273.24 Q38.63 273.74 36.61 272.23 Q34.59 270.71 35.6 266.16 Q36.61 261.62 49.74 256.06 Q62.87 250.51 69.44 244.95 Q76 239.39 59.34 246.97 Q42.67 254.55 35.09 254.05 Q27.52 253.54 26.5 250.5 Q25.49 247.47 27.01 245.45 Q28.53 243.43 30.55 241.92 Q32.57 240.4 41.66 239.89 Q50.75 239.39 61.35 231.81 Q71.96 224.24 84.08 222.73 Q96.2 221.21 99.73 217.68 Q103.27 214.14 108.82 203.53 Q114.38 192.93 102.26 198.49 Q90.14 204.04 79.03 204.55 Q67.92 205.05 58.33 202.02 Q48.73 198.99 37.11 198.99 Q25.49 198.99 29.03 193.94 Q32.57 188.89 40.65 185.86 Q48.73 182.83 71.96 184.35 Q95.19 185.86 105.8 181.31 Q116.4 176.77 131.05 172.73 Q145.7 168.69 157.82 168.69 Q169.94 168.69 187.62 172.22 Q205.29 175.76 214.38 175.25 Q223.47 174.75 230.04 172.73 Q236.61 170.71 245.7 164.65 Q254.79 158.59 263.38 155.06 Q271.96 151.52 286.1 139.9 Q300.24 128.28 306.3 126.26Z" fill="#f2ecdc" fill-rule="evenodd"/></g><circle cx="1251.104369803851" cy="477.44536073315686" r="5" fill="#d6b375" opacity="0"/><text x="80" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Validate</text>
-<text x="210" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Measure</text>
-<text x="350" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Summarize</text><g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="45" font-weight="500" fill="#f2ecdc"><text x="965" y="604" opacity="1">1.112 km</text><text x="965" y="604" opacity="0">—</text></g>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="45" font-weight="500" fill="#f2ecdc"><text x="965" y="695" opacity="1">10 min</text><text x="965" y="695" opacity="0">—</text></g>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="24" font-weight="500" fill="#f2ecdc"><text x="965" y="778" opacity="1">2 supplied points</text><text x="965" y="778" opacity="0">—</text></g></svg>
+<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="500">
+  <text x="80" y="610" font-size="17" fill="#c6c9c6">Synthetic walk example</text>
+  <g font-size="49" fill="#f2ecdc">
+    <text x="80" y="681">1.112 km</text>
+    <text x="535" y="681">10 min</text>
+    <text x="985" y="681">2 points</text>
+  </g>
+  <g font-size="18" fill="#c6c9c6">
+    <text x="80" y="722">Estimated distance</text>
+    <text x="535" y="722">Recorded duration</text>
+    <text x="985" y="722">Supplied locations</text>
+  </g>
+</g><g transform="translate(650 -30) scale(1.6)"><path d="M303.41 127.7 Q309.47 125.68 321.09 126.19 Q332.71 126.69 338.77 130.22 Q344.83 133.76 347.36 138.81 Q349.88 143.86 360.99 148.41 Q372.1 152.95 373.11 155.47 Q374.12 158 373.11 160.53 Q372.1 163.05 368.06 166.08 Q364.02 169.11 353.41 168.1 Q342.81 167.09 350.89 172.64 Q358.97 178.2 357.96 181.23 Q356.95 184.26 350.38 183.75 Q343.82 183.25 337.25 179.21 Q330.69 175.17 325.63 175.68 Q320.58 176.18 313 184.26 Q305.43 192.34 302.4 201.94 Q299.37 211.53 307.45 215.06 Q315.53 218.6 347.86 223.15 Q380.18 227.7 381.69 231.24 Q383.21 234.77 379.67 237.3 Q376.14 239.82 369.07 239.82 Q362 239.82 344.83 236.79 Q327.66 233.76 342.81 240.83 Q357.96 247.9 367.05 249.42 Q376.14 250.93 377.15 251.94 Q378.16 252.95 377.15 256.49 Q376.14 260.02 367.56 261.03 Q358.97 262.04 342.31 255.48 Q325.64 248.91 303.92 244.37 Q282.2 239.82 276.64 236.79 Q271.09 233.76 256.44 237.8 Q241.8 241.84 230.69 241.84 Q219.57 241.84 210.99 239.82 Q202.4 237.8 187.25 230.73 Q172.1 223.66 164.52 223.66 Q156.95 223.66 146.85 230.73 Q136.75 237.8 127.66 242.34 Q118.56 246.89 99.37 250.93 Q80.18 254.97 63.52 264.56 Q46.85 274.16 41.3 274.67 Q35.74 275.17 33.72 273.65 Q31.7 272.14 32.71 267.6 Q33.72 263.05 46.85 257.5 Q59.98 251.94 66.55 246.38 Q73.11 240.83 56.45 248.41 Q39.78 255.98 32.2 255.47 Q24.63 254.97 23.62 251.94 Q22.61 248.91 24.13 246.89 Q25.64 244.87 27.66 243.36 Q29.68 241.84 38.77 241.34 Q47.86 240.83 58.46 233.25 Q69.07 225.68 81.19 224.17 Q93.31 222.65 96.84 219.11 Q100.38 215.57 105.94 204.97 Q111.49 194.36 99.37 199.92 Q87.25 205.47 76.14 205.97 Q65.03 206.48 55.44 203.45 Q45.84 200.42 34.23 200.42 Q22.61 200.42 26.14 195.37 Q29.68 190.32 37.76 187.29 Q45.84 184.26 69.07 185.77 Q92.3 187.29 102.91 182.75 Q113.51 178.2 128.16 174.16 Q142.81 170.12 154.93 170.12 Q167.05 170.12 184.73 173.66 Q202.4 177.19 211.49 176.69 Q220.58 176.18 227.15 174.16 Q233.72 172.14 242.81 166.08 Q251.9 160.02 260.49 156.49 Q269.07 152.95 283.21 141.33 Q297.35 129.72 303.41 127.7Z" fill="#f2ecdc" fill-rule="evenodd"/></g></svg>

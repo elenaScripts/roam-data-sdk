@@ -88,16 +88,26 @@ for (let index = 0; index < 10; index++) {
   }
   if (count < width * height * .04) throw new Error('Empty dog pose ' + index);
   const shiftX = 376 - headRight * 400 / width;
+  // Register the torso rather than the changing nose, paws or tail extremities
+  let mass = 0, bodyX = 0, bodyY = 0;
+  for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) if (mask[y * width + x]) {
+    const px = x * 400 / width + shiftX, py = y * 400 / height;
+    if (px >= 130 && px < 300 && py >= 145 && py < 245) {
+      mass++; bodyX += px; bodyY += py;
+    }
+  }
+  if (!mass) throw new Error('Missing torso anchor in pose ' + index);
+  const registration = { x: 220 - bodyX / mass, y: 200 - bodyY / mass };
   const loops = contours(mask, width, height);
   const path = loops.map(loop => {
-    const p = loop.map(([x, y]) => [number(x * 400 / width + shiftX), number(y * 400 / height)]);
+    const p = loop.map(([x, y]) => [number(x * 400 / width + shiftX + registration.x), number(y * 400 / height + registration.y)]);
     const mid = (a, b) => [number((a[0] + b[0]) / 2), number((a[1] + b[1]) / 2)];
     const pair = a => a.join(' ');
     let d = 'M' + pair(mid(p.at(-1), p[0]));
     p.forEach((point, i) => { d += ' Q' + pair(point) + ' ' + pair(mid(point, p[(i + 1) % p.length])); });
     return d + 'Z';
   }).join(' ');
-  poses.push({ path, foregroundPixels: count });
+  poses.push({ path, foregroundPixels: count, registration });
 }
 await writeFile(join(root, 'docs/assets/dog-run-frames.json'), JSON.stringify({ cellSize: 400, poses }, null, 2) + '\n');
 console.log(JSON.stringify({ poses: poses.length, pathCharacters: poses.reduce((sum, p) => sum + p.path.length, 0) }));
