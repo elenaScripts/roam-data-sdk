@@ -9,6 +9,8 @@ Work with saved dog walks and other pet location datasets locally. Roam data SDK
 
 This is an **offline data library**. It does not connect to tracker services, sign in to accounts, or retrieve live reports. You supply data in the documented format.
 
+Roam is independent of tracker providers. Its MIT license covers this code and does not grant permission to access an external service.
+
 The animation illustrates a workflow. You use the SDK through JavaScript or TypeScript functions; it has no graphical interface. [View the still image](docs/assets/sdk-overview.png) or [read the animation notes](docs/assets/ANIMATION.md).
 
 ## Use cases
