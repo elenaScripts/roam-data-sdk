@@ -9,15 +9,15 @@ const excluded = new Set(['.git', 'node_modules', 'dist', 'output', 'coverage'])
 // Pin the exact artwork after visual review; other binaries still fail
 const reviewedImages = new Map([
   ['docs/assets/sdk-overview.png', {
-    sha256: '22a479ad54a77ca9a309fe039e2373ffa3d1609025497c384ff995c8e4990555',
+    sha256: '8810472c6468564280238fa6e68739fc70a4a45ca3116e5b6d535b3c00e79eb4',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
   ['docs/assets/sdk-workflow.gif', {
-    sha256: '54d401e6d4a4208ac7247a47d5da608d083737272276abfcc20eccc380a6d721',
+    sha256: 'b1698e67743e147cc94e91fad43b5b35feceb778df3106cde71966f6b1487b61',
     signature: Buffer.from('GIF89a'),
   }],
   ['docs/assets/sdk-workflow.png', {
-    sha256: '7d8d0a666b3a9d3d11b45c0228d33e056f730e8995161bafa88347329c59bb28',
+    sha256: '24ab5b1899d3b5df577fca7bb40382e3345dfcffaf347dacb1b3db27b9cfe5c0',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
 ]);

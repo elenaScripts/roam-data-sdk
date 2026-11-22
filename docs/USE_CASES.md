@@ -1,8 +1,8 @@
 # Use cases
 
-Roam data SDK is for developers working with pet location data that their application already has. It accepts its own documented data format and runs locally in Node.js. It supplies data-processing functions; your application provides storage, imports, and the user interface.
+Roam data SDK is for developers working with pet location data that their application already has, such as saved dog walks. It accepts its own documented data format and runs locally in Node.js. It supplies data-processing functions; your application provides storage, imports, and the user interface.
 
-## Report on saved outings
+## Report on saved dog walks
 
 **Use it when:** you have recorded points grouped into separate outings or other explicit segments and want a distance and duration report.
 

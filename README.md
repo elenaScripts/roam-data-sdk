@@ -2,10 +2,10 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/sdk-overview.png">
-  <img src="docs/assets/sdk-workflow.png" width="1000" alt="Animated offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span">
+  <img src="docs/assets/sdk-workflow.png" width="1000" alt="Animated dog trotting above a schematic location trail and pin. Roam validates and summarizes supplied dog location data. The synthetic walk example has two points, about 1.112 km of distance, and a 10-minute segment span">
 </picture>
 
-Work with pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
+Work with saved dog walks and other pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
 
 This is an **offline data library**. It does not connect to tracker services, sign in to accounts, or retrieve live reports. You supply data in the documented format.
 
@@ -15,7 +15,7 @@ The animation illustrates a workflow. You use the SDK through JavaScript or Type
 
 | What you want to build | How the SDK helps | What your application supplies |
 | --- | --- | --- |
-| A report for saved outings | Calculate approximate distance, recorded duration, and point counts without joining separate segments | Recorded points grouped into segments |
+| A report for saved dog walks | Calculate approximate distance, recorded duration, and point counts without joining separate segments | Recorded points grouped into segments |
 | An import or archive workflow | Validate incoming JSON and serialize a consistent dataset for later use | Data converted to the SDK format, plus file reading and writing |
 | A location-history dashboard | Provide validated points and summary values for your own interface | The interface, charts, and any map renderer |
 | A prototype that works offline | Develop and test with synthetic locations and predictable results | Sample datasets and the feature you are building |

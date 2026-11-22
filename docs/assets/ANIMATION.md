@@ -6,9 +6,9 @@ The main animation and still poster are rendered at 2000 by 1200 pixels and disp
 
 ## Sequence
 
-1. Let two small data points travel through the central bent plane
+1. Show a dog trotting above a short schematic location trail
 2. Gently highlight validation, measurement, and summarization in the fixed typography
-3. Let the joined planes flex slowly around their common base
+3. Move a small marker along the trail toward its location pin
 4. Reveal the summary values without moving the labels
 5. Hold the completed result for reading before resetting gently
 
@@ -16,9 +16,9 @@ The synthetic result matches `examples/demo.mjs`: two points, approximately 1.11
 
 ## Visual direction
 
-The supplied exhibition-poster reference guides the deep blue ground, warm ivory tones, asymmetrical composition, and open space. One branching sculptural form is made from three broad bent planes. A two-line Roam title sits below the artwork, with the synthetic results in a separate text block.
+The visual centers on a dog and its location, with the deep blue ground, warm ivory tones, asymmetrical composition, and open space retained from the earlier poster direction. An original side-profile dog illustration sits above a single schematic trail and location pin. A two-line Roam title and the synthetic walk results keep the purpose of the SDK visible.
 
-The artwork is drawn in SVG with fixed, readable typography. The planes sway and flex gently around their shared base, while two small data points follow an invisible path inside the central plane. The reference image is used for visual direction; the artwork is drawn specifically for Roam.
+The artwork is drawn in SVG with fixed, readable typography. Four articulated legs move in alternating diagonal pairs over an 800 ms trot cycle, with a small body bounce and secondary ear and tail motion. The foot trajectories compensate for the body bounce to keep the stance feet grounded. The supplied dog photographs and silhouette references guide the subject and poses; the illustration is drawn specifically for Roam.
 
 ## Reduced motion
 
