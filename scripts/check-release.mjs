@@ -8,16 +8,20 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const excluded = new Set(['.git', 'node_modules', 'dist', 'output', 'coverage']);
 // Pin the exact artwork after visual review; other binaries still fail
 const reviewedImages = new Map([
+  ['docs/assets/dog-run-sheet.png', {
+    sha256: '5f48c1314480b123c2eafb799daedcefbfb6ddf78b8b57c7b8feb59c99ebd9d6',
+    signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+  }],
   ['docs/assets/sdk-overview.png', {
-    sha256: '8810472c6468564280238fa6e68739fc70a4a45ca3116e5b6d535b3c00e79eb4',
+    sha256: '8a214ddac4919c9a3e4a6bd55142b84fa45ca5236c45aa2ca5430d3dcab1f4f6',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
   ['docs/assets/sdk-workflow.gif', {
-    sha256: 'b1698e67743e147cc94e91fad43b5b35feceb778df3106cde71966f6b1487b61',
+    sha256: 'bb9faa8f5b1b6015806e9a7a9464e58f4f18f784913bc043796f44c11bc0b9c1',
     signature: Buffer.from('GIF89a'),
   }],
   ['docs/assets/sdk-workflow.png', {
-    sha256: '24ab5b1899d3b5df577fca7bb40382e3345dfcffaf347dacb1b3db27b9cfe5c0',
+    sha256: '7a9b07b358629ca75c9519ada07ff1cc2df08eda81bb9bf73e14d57f484d9173',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
 ]);

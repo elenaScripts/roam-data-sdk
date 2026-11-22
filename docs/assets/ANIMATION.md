@@ -6,7 +6,7 @@ The main animation and still poster are rendered at 2000 by 1200 pixels and disp
 
 ## Sequence
 
-1. Show a dog trotting above a short schematic location trail
+1. Show a dog galloping above a short schematic location trail
 2. Gently highlight validation, measurement, and summarization in the fixed typography
 3. Move a small marker along the trail toward its location pin
 4. Reveal the summary values without moving the labels
@@ -18,7 +18,9 @@ The synthetic result matches `examples/demo.mjs`: two points, approximately 1.11
 
 The visual centers on a dog and its location, with the deep blue ground, warm ivory tones, asymmetrical composition, and open space retained from the earlier poster direction. An original side-profile dog illustration sits above a single schematic trail and location pin. A two-line Roam title and the synthetic walk results keep the purpose of the SDK visible.
 
-The artwork is drawn in SVG with fixed, readable typography. Four articulated legs move in alternating diagonal pairs over an 800 ms trot cycle, with a small body bounce and secondary ear and tail motion. The foot trajectories compensate for the body bounce to keep the stance feet grounded. The supplied dog photographs and silhouette references guide the subject and poses; the illustration is drawn specifically for Roam.
+The dog uses ten complete silhouette poses over a 500 ms running cycle. Contact, gathering, push-off and airborne extension are represented as whole-body poses, keeping the legs, spine and tail together. The old articulated-leg model has been replaced. The [motion study from the Wellcome Collection](https://wellcomecollection.org/works/x353z8n2) was consulted as a reference for the phases of running.
+
+The silhouettes were created with the built-in image generation tool; [the prompts](dog-run-prompt.md) and [source sheet](dog-run-sheet.png) are included. The preparation script converts the silhouettes to smoothed SVG paths and aligns their head positions. The final lettering and silhouettes are rendered at full resolution, rather than enlarging the sprite bitmap.
 
 ## Reduced motion
 
@@ -36,6 +38,12 @@ From the repository root, install the optional graphics tool into the ignored ou
 npm install --prefix output/animation-tools --no-save --package-lock=false sharp
 npm run build
 ROAM_ASSET_MODULE_ROOT="$PWD/output/animation-tools" node scripts/render-overview.mjs
+```
+
+To rebuild the vector silhouettes from the source sheet before rendering:
+
+```sh
+ROAM_ASSET_MODULE_ROOT="$PWD/output/animation-tools" node scripts/prepare-dog-run.mjs
 ```
 
 Use [Sharp 0.34.3 or later](https://sharp.pixelplumbing.com/changelog/v0.34.3/), which supports `raw.pageHeight` for the compatibility GIF. Both animations use nominal 50 ms frame intervals; the GIF encoder may combine identical frames into longer holds. Input and processing stages use eased fades; results enter over 200 ms with an 80 ms stagger. The completed result remains readable for more than two seconds.

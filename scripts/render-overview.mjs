@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import { ApngEncoder } from './apng.mjs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { summarizeDataset } from '../dist/index.js';
@@ -59,13 +59,12 @@ const pulse = (time, start, end) =>
 const pointOnCurve = (t, points) => [0, 1].map(axis =>
   (1 - t) ** 3 * points[0][axis] + 3 * (1 - t) ** 2 * t * points[1][axis]
   + 3 * (1 - t) * t ** 2 * points[2][axis] + t ** 3 * points[3][axis]);
-// Original side-profile dog drawing with an articulated diagonal trot
 const words = [[80, 'Validate'], [210, 'Measure'], [350, 'Summarize']];
 const walkCurve = [[700, 478], [820, 497], [1120, 458], [1255, 478]];
-const body = 'M115 142 C144 112 195 108 241 113 C294 117 333 124 368 111 L398 70 C410 54 430 44 451 48 C467 51 480 60 491 72 L526 86 Q535 91 532 102 Q530 110 517 111 L488 112 C479 127 464 136 443 139 L430 153 L432 163 L418 172 C407 187 388 198 365 201 C302 219 231 208 185 199 C163 194 144 183 132 170Z';
-const tail = 'M137 144 C108 143 88 126 68 109 C48 93 28 89 16 96 C10 100 9 91 17 85 C34 76 57 82 80 96 C104 113 119 119 145 121Z';
-const ear = 'M431 52 C414 52 400 63 401 82 L413 121 Q421 129 432 121 Q437 111 433 90 Q430 72 440 61Z';
-const pawColor = { near: c.ink, far: c.side };
+const dogFrames = JSON.parse(await readFile(join(assets, 'dog-run-frames.json'), 'utf8')).poses;
+if (dogFrames.length !== 10 || dogFrames.some(frame => !/^[MQZ0-9., \\-]+$/.test(frame.path))) {
+  throw new Error('Expected ten prepared dog silhouettes');
+}
 
 function scene() {
   return `
@@ -95,69 +94,9 @@ function scene() {
 </g>`;
 }
 
-const add = (a, b) => [a[0] + b[0], a[1] + b[1]];
-const subtract = (a, b) => [a[0] - b[0], a[1] - b[1]];
-const times = (a, value) => [a[0] * value, a[1] * value];
-const normal = vector => {
-  const length = Math.hypot(...vector);
-  return [-vector[1] / length, vector[0] / length];
-};
-const pair = point => point.map(value => value.toFixed(3)).join(' ');
-
-function leg(hip, foot, upper, lower, bend, color, rear = false) {
-  const delta = subtract(foot, hip);
-  const distance = Math.min(upper + lower - .001, Math.hypot(...delta));
-  const unit = times(delta, 1 / Math.hypot(...delta));
-  const along = (upper ** 2 - lower ** 2 + distance ** 2) / (2 * distance);
-  const offset = Math.sqrt(Math.max(0, upper ** 2 - along ** 2));
-  const knee = add(add(hip, times(unit, along)), times([-unit[1], unit[0]], offset * bend));
-  const first = normal(subtract(knee, hip));
-  const second = normal(subtract(foot, knee));
-  const middle = add(first, second);
-  const kneeNormal = times(middle, 1 / Math.hypot(...middle));
-  const hipWidth = rear ? 13 : 11;
-  const kneeWidth = rear ? 8 : 7;
-  const ankleWidth = 4.5;
-  const leftHip = add(hip, times(first, hipWidth));
-  const rightHip = add(hip, times(first, -hipWidth));
-  const leftKnee = add(knee, times(kneeNormal, kneeWidth));
-  const rightKnee = add(knee, times(kneeNormal, -kneeWidth));
-  const leftAnkle = add(foot, times(second, ankleWidth));
-  const rightAnkle = add(foot, times(second, -ankleWidth));
-  const mix = (a, b, amount) => add(times(a, 1 - amount), times(b, amount));
-  const leftBefore = mix(leftHip, leftKnee, .72);
-  const leftAfter = mix(leftKnee, leftAnkle, .28);
-  const rightBefore = mix(rightHip, rightKnee, .72);
-  const rightAfter = mix(rightKnee, rightAnkle, .28);
-  return `<path d="M${pair(leftHip)} L${pair(leftBefore)} Q${pair(leftKnee)} ${pair(leftAfter)} L${pair(leftAnkle)} Q${foot[0] - 4} ${foot[1] + 7} ${foot[0] + 3} ${foot[1] + 7} L${foot[0] + 13} ${foot[1] + 7} Q${foot[0] + 20} ${foot[1] + 2} ${foot[0] + 8} ${foot[1] - 3} L${pair(rightAnkle)} L${pair(rightAfter)} Q${pair(rightKnee)} ${pair(rightBefore)} L${pair(rightHip)}Z" fill="${color}" stroke="${color}" stroke-width="3" stroke-linejoin="round"/>`;
-}
-
 function dog(time, still = false) {
-  const phase = still ? .75 : Math.PI * 2 * time / 800;
-  const bounce = still ? 0 : 2 * Math.cos(phase * 2);
-  const foot = (x, angle, stride, lift) => [
-    x + stride * Math.cos(angle),
-    285 - bounce - lift * Math.max(0, -Math.sin(angle)) ** 1.5,
-  ];
-  const nearFront = leg([378, 177], foot(378, phase, 37, 35), 57, 65, 1, pawColor.near);
-  const farFront = leg([362, 179], foot(362, phase + Math.PI, 37, 35), 57, 65, 1, pawColor.far);
-  const nearHind = leg([170, 180], foot(170, phase + Math.PI, 43, 38), 55, 65, -1, pawColor.near, true);
-  const farHind = leg([185, 179], foot(185, phase, 43, 38), 55, 65, -1, pawColor.far, true);
-  const tailAngle = still ? -3 : 6 * Math.sin(phase / 2);
-  const earAngle = still ? 0 : -4 * Math.sin(phase - .4);
-  return `<g transform="translate(660 ${118 + bounce * 1.12}) scale(1.12)">
-    ${farHind}${farFront}
-    <path d="${tail}" fill="${c.face}" transform="rotate(${tailAngle} 137 135)"/>
-    <path d="${body}" fill="${c.ink}"/>
-    ${nearHind}${nearFront}
-    <path d="${ear}" fill="${c.face}" transform="rotate(${earAngle} 423 65)"/>
-    <path d="M406 112 Q422 124 442 128" fill="none" stroke="${c.amber}" stroke-width="6"/>
-    <circle cx="435" cy="140" r="8" fill="${c.amber}"/>
-    <circle cx="435" cy="140" r="2.4" fill="${c.paper}"/>
-    <circle cx="467" cy="74" r="3.5" fill="${c.paper}"/>
-    <path d="M524 87 Q538 91 531 101 L522 100Z" fill="${c.paper}"/>
-    <path d="M485 106 Q499 115 516 107" fill="none" stroke="${c.paper}" stroke-width="2.7" stroke-linecap="round"/>
-  </g>`;
+  const index = still ? 6 : Math.floor((time % 500) / 50);
+  return `<g transform="translate(650 -30) scale(1.6)"><path d="${dogFrames[index].path}" fill="${c.ink}" fill-rule="evenodd"/></g>`;
 }
 
 function motion(time, still = false) {
@@ -181,7 +120,7 @@ function motion(time, still = false) {
 }
 
 function svg(content) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 1400 840"><title>Roam data SDK workflow</title><desc>An illustrated dog trots above a schematic location trail. Roam validates and summarizes supplied location data. The synthetic walk example has two points, an estimated distance of 1.112 km, and a ten-minute segment span.</desc>${content}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 1400 840"><title>Roam data SDK workflow</title><desc>An illustrated dog runs above a schematic location trail. Roam validates and summarizes supplied location data. The synthetic walk example has two points, an estimated distance of 1.112 km, and a ten-minute segment span.</desc>${content}</svg>`;
 }
 
 const backgroundScene = scene();
@@ -189,7 +128,7 @@ const posterSvg = svg(backgroundScene + motion(6400, true));
 await writeFile(join(assets, 'sdk-overview.svg'), posterSvg.replace(/[ \t]+$/gm, '') + '\n');
 await sharp(Buffer.from(posterSvg)).png().toFile(join(assets, 'sdk-overview.png'));
 const background = await sharp(Buffer.from(svg(backgroundScene))).png().toBuffer();
-const snapshots = new Map([[1000, 'input'], [3400, 'processing'], [6400, 'result']]);
+const snapshots = new Map([[0, 'contact'], [100, 'collected'], [200, 'push'], [300, 'flight'], [1000, 'input'], [3400, 'processing'], [6400, 'result']]);
 const frames = [];
 const delays = [];
 const expectedHashes = [];
@@ -197,8 +136,9 @@ const apng = previewOnly ? null : new ApngEncoder(width, height, durationMs / fr
 let previousRaw;
 for (let time = 0; time < durationMs; time += frameMs) {
   if (previewOnly && !snapshots.has(time)) continue;
-  // Keep typography fixed while the dog trots and the route marker moves
+  // Whole-body running poses keep the paws and tail part of one coherent silhouette
   const overlay = svg('<defs>' + backgroundScene.split('<defs>')[1].split('</defs>')[0] + '</defs>' + motion(time));
+  if (/NaN|Infinity/.test(overlay)) throw new Error('Invalid dog pose coordinates');
   const raw = await sharp(background).composite([{ input: Buffer.from(overlay) }]).ensureAlpha().raw().toBuffer();
   if (!previewOnly) {
     expectedHashes.push(createHash('sha256').update(raw).digest('hex'));

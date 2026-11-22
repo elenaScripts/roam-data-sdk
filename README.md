@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/sdk-overview.png">
-  <img src="docs/assets/sdk-workflow.png" width="1000" alt="Animated dog trotting above a schematic location trail and pin. Roam validates and summarizes supplied dog location data. The synthetic walk example has two points, about 1.112 km of distance, and a 10-minute segment span">
+  <img src="docs/assets/sdk-workflow.png" width="1000" alt="Animated dog running above a schematic location trail and pin. Roam validates and summarizes supplied dog location data. The synthetic walk example has two points, about 1.112 km of distance, and a 10-minute segment span">
 </picture>
 
 Work with saved dog walks and other pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
