@@ -1,8 +1,8 @@
-# Overview image
+# Previous overview image
 
-Created with the built-in image generation tool. This illustration uses synthetic data and represents the SDK workflow. The SDK itself is a code library with no graphical interface.
+This file records the built-in image generation prompts for the previous overview illustration. The current Aalto-inspired animation and still artwork are drawn by `scripts/render-overview.mjs`; see [animation notes](ANIMATION.md). The SDK itself is a code library with no graphical interface.
 
-The banner is saved as `sdk-overview.png`. Its result values match `examples/demo.mjs`: approximately 1.112 km between two points over a 10-minute segment. The release scanner pins the reviewed image's checksum; a replacement needs a fresh visual review and checksum update in `scripts/check-release.mjs`.
+The earlier banner was replaced after the visual direction changed. The synthetic result values still match `examples/demo.mjs`: approximately 1.112 km between two points over a 10-minute segment.
 
 ## Generation prompt
 
