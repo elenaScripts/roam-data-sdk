@@ -20,4 +20,5 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: node examples/demo.mjs
+      - run: node examples/history-report.mjs
       - run: npm pack --dry-run

@@ -1,11 +1,29 @@
 # Roam data SDK for TypeScript
 
+![Offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span](docs/assets/sdk-overview.png)
+
 Work with pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
 
 This is an **offline data library**. It does not connect to tracker services, sign in to accounts, or retrieve live reports. You supply data in the documented format.
 
+The image illustrates a workflow. You use the SDK through JavaScript or TypeScript functions; it has no graphical interface.
+
+## Use cases
+
+| What you want to build | How the SDK helps | What your application supplies |
+| --- | --- | --- |
+| A report for saved outings | Calculate approximate distance, recorded duration, and point counts without joining separate segments | Recorded points grouped into segments |
+| An import or archive workflow | Validate incoming JSON and serialize a consistent dataset for later use | Data converted to the SDK format, plus file reading and writing |
+| A location-history dashboard | Provide validated points and summary values for your own interface | The interface, charts, and any map renderer |
+| A prototype that works offline | Develop and test with synthetic locations and predictable results | Sample datasets and the feature you are building |
+
+For example, two supplied 10-minute segments separated by a 50-minute gap produce 20 minutes of recorded duration. The SDK excludes the gap from both distance and duration. It uses the segments you provide rather than detecting outings automatically.
+
+See the [use-case guide](docs/USE_CASES.md) for concrete workflows and the [history report example](examples/history-report.mjs) for runnable code.
+
 ## Documentation
 
+- [Use cases and workflows](docs/USE_CASES.md)
 - [API reference and data format](docs/API.md)
 - [Synthetic example](examples/demo.mjs)
 

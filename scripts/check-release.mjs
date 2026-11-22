@@ -1,10 +1,15 @@
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { lstat, readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { join, resolve } from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const excluded = new Set(['.git', 'node_modules', 'dist', 'output', 'coverage']);
+// Pin the exact generated artwork after visual review; other binaries still fail
+const reviewedImages = new Map([
+  ['docs/assets/sdk-overview.png', 'dd779c0a5059768b82c89c79bdd8953f650ac1963e80c9770902099878db8c09'],
+]);
 async function walk(relative = '') {
   const paths = [];
   for (const entry of await readdir(join(root, relative), { withFileTypes: true })) {
@@ -45,6 +50,14 @@ for (const path of paths) {
     continue;
   }
   const bytes = await readFile(join(root, path));
+  if (reviewedImages.has(path)) {
+    const pngSignature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+    if (!bytes.subarray(0, 8).equals(pngSignature)
+      || createHash('sha256').update(bytes).digest('hex') !== reviewedImages.get(path)) {
+      failures.push(`${path}: reviewed image checksum mismatch`);
+    }
+    continue;
+  }
   if (bytes.includes(0)) { failures.push(`${path}: binary file requires review`); continue; }
   const contents = bytes.toString('utf8');
   for (const [label, pattern] of patterns) {
