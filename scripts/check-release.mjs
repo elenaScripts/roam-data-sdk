@@ -9,12 +9,16 @@ const excluded = new Set(['.git', 'node_modules', 'dist', 'output', 'coverage'])
 // Pin the exact artwork after visual review; other binaries still fail
 const reviewedImages = new Map([
   ['docs/assets/sdk-overview.png', {
-    sha256: '220799b60a227169359ba2cc506e6f568da1720238633b15a07ae9a3e86cf4ba',
+    sha256: '93ba9c2f228bacf376d9c2d439ca86e32f77ff093544d0c01e5c5ab052d38f29',
     signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
   ['docs/assets/sdk-workflow.gif', {
-    sha256: '94760a2d189641183f2086dcf87e90fb21562d7a63f9e03b60fcf8d48a87fd80',
+    sha256: '0190d473798de592a334b9003b3963f3732f82b0295fd4c109dd4f6c91a049e3',
     signature: Buffer.from('GIF89a'),
+  }],
+  ['docs/assets/sdk-workflow.png', {
+    sha256: 'a34431876917dc9bdba815deebaab2b31f0c8bce133a5f91912dbb04013db73d',
+    signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
   }],
 ]);
 async function walk(relative = '') {

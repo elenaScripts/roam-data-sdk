@@ -2,7 +2,7 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/sdk-overview.png">
-  <img src="docs/assets/sdk-workflow.gif" alt="Animated offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span">
+  <img src="docs/assets/sdk-workflow.png" width="1000" alt="Animated offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span">
 </picture>
 
 Work with pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
