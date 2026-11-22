@@ -1,12 +1,15 @@
 # Roam data SDK for TypeScript
 
-![Offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span](docs/assets/sdk-overview.png)
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/sdk-overview.png">
+  <img src="docs/assets/sdk-workflow.gif" alt="Animated offline SDK workflow: supplied JSON history passes through local validation and distance calculations to produce a summary. The synthetic example has two points, about 1.112 km of distance, and a 10-minute segment span">
+</picture>
 
 Work with pet location datasets locally. Roam data SDK validates JSON, calculates distances, and summarizes explicitly separated history segments. It includes TypeScript definitions and has no runtime dependencies.
 
 This is an **offline data library**. It does not connect to tracker services, sign in to accounts, or retrieve live reports. You supply data in the documented format.
 
-The image illustrates a workflow. You use the SDK through JavaScript or TypeScript functions; it has no graphical interface.
+The animation illustrates a workflow. You use the SDK through JavaScript or TypeScript functions; it has no graphical interface. [View the still image](docs/assets/sdk-overview.png) or [read the animation notes](docs/assets/ANIMATION.md).
 
 ## Use cases
 

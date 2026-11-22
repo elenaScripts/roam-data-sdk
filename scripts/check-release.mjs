@@ -6,9 +6,16 @@ import { join, resolve } from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const excluded = new Set(['.git', 'node_modules', 'dist', 'output', 'coverage']);
-// Pin the exact generated artwork after visual review; other binaries still fail
+// Pin the exact artwork after visual review; other binaries still fail
 const reviewedImages = new Map([
-  ['docs/assets/sdk-overview.png', 'dd779c0a5059768b82c89c79bdd8953f650ac1963e80c9770902099878db8c09'],
+  ['docs/assets/sdk-overview.png', {
+    sha256: 'dd779c0a5059768b82c89c79bdd8953f650ac1963e80c9770902099878db8c09',
+    signature: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+  }],
+  ['docs/assets/sdk-workflow.gif', {
+    sha256: 'f1ff08e266e9e11b49e9b7e9366a6cdab058410b8f7b15cf6706bfd6ae2b7431',
+    signature: Buffer.from('GIF89a'),
+  }],
 ]);
 async function walk(relative = '') {
   const paths = [];
@@ -51,9 +58,9 @@ for (const path of paths) {
   }
   const bytes = await readFile(join(root, path));
   if (reviewedImages.has(path)) {
-    const pngSignature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
-    if (!bytes.subarray(0, 8).equals(pngSignature)
-      || createHash('sha256').update(bytes).digest('hex') !== reviewedImages.get(path)) {
+    const reviewed = reviewedImages.get(path);
+    if (!bytes.subarray(0, reviewed.signature.length).equals(reviewed.signature)
+      || createHash('sha256').update(bytes).digest('hex') !== reviewed.sha256) {
       failures.push(`${path}: reviewed image checksum mismatch`);
     }
     continue;
