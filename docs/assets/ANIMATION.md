@@ -6,9 +6,9 @@ The main animation and still poster are rendered at 2000 by 1200 pixels and disp
 
 ## Sequence
 
-1. Gently highlight the supplied coordinates, timestamps, and segments
-2. Let two glass-like data beads follow a curved path into the SDK
-3. Light the validation, measurement, and summarization stages, then carry the beads to the results
+1. Let two small data points travel through the central bent plane
+2. Gently highlight validation, measurement, and summarization in the fixed typography
+3. Let the joined planes flex slowly around their common base
 4. Reveal the summary values without moving the labels
 5. Hold the completed result for reading before resetting gently
 
@@ -16,9 +16,9 @@ The synthetic result matches `examples/demo.mjs`: two points, approximately 1.11
 
 ## Visual direction
 
-The Aalto-inspired composition uses a near-black ground, warm ivory linework, a visible poster grid, and large, heavy sans-serif typography. A filled ivory input panel balances the outlined processing form and the large result values. Flat fills and precise contours keep the edges clear. The supplied poster references guide the contrast and layout; the artwork is drawn specifically for Roam.
+The supplied exhibition-poster reference guides the deep blue ground, warm ivory tones, asymmetrical composition, and open space. One branching sculptural form is made from three broad bent planes. A two-line Roam title sits below the artwork, with the synthetic results in a separate text block.
 
-The artwork is drawn in SVG with fixed, readable typography. Small green and amber data beads follow eased curved paths. A double-contour organic form in the header moves gently through a continuous loop.
+The artwork is drawn in SVG with fixed, readable typography. The planes sway and flex gently around their shared base, while two small data points follow an invisible path inside the central plane. The reference image is used for visual direction; the artwork is drawn specifically for Roam.
 
 ## Reduced motion
 

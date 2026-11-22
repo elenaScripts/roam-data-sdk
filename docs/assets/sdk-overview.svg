@@ -1,66 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1200" viewBox="0 0 1400 840"><title>Roam data SDK workflow</title><desc>Supplied JSON is validated and summarized locally. The synthetic example has two points, an estimated distance of 1.112 km, and a ten-minute segment span.</desc>
-<defs>
-  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf2d7"/><stop offset=".55" stop-color="#acc8aa"/><stop offset="1" stop-color="#678d73"/></linearGradient>
-  <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5e5bc"/><stop offset=".6" stop-color="#e5b968"/><stop offset="1" stop-color="#a57738"/></linearGradient>
-</defs>
-<rect width="1400" height="840" fill="#20221c"/>
-<rect x="36" y="28" width="1328" height="784" fill="none" stroke="#f3e3be" stroke-width="1.7"/>
-<path d="M36 218 H1364" fill="none" stroke="#f3e3be" stroke-width="1.4" opacity=".7"/>
-<path d="M36 294 H1364" fill="none" stroke="#f3e3be" stroke-width="1.4" opacity=".7"/>
-<path d="M36 700 H1364" fill="none" stroke="#f3e3be" stroke-width="1.4" opacity=".7"/>
-<path d="M416 218 V700" fill="none" stroke="#f3e3be" stroke-width="1.4" opacity=".7"/>
-<path d="M960 28 V700" fill="none" stroke="#f3e3be" stroke-width="1.4" opacity=".7"/>
-<g font-family="Avenir Next, Futura, DejaVu Sans, sans-serif" font-weight="500" fill="#f3e3be">
-  <text x="80" y="65" font-size="18" letter-spacing="1.1" fill="#d0c2a2">TypeScript / Node.js</text>
-  <text x="76" y="151" font-size="96" font-weight="800" letter-spacing="-4.5">Roam data SDK</text>
-  <text x="80" y="194" font-size="25" fill="#d0c2a2">Offline tools for pet location data</text>
-  <g font-size="22" font-weight="600">
-    <text x="80" y="266"><tspan fill="#e3bb72">01</tspan><tspan dx="13">Your data</tspan></text>
-    <text x="501" y="266"><tspan fill="#e3bb72">02</tspan><tspan dx="13">Local processing</tspan></text>
-    <text x="1010" y="266"><tspan fill="#e3bb72">03</tspan><tspan dx="13">Useful results</tspan></text>
+<defs></defs>
+<rect width="1400" height="840" fill="#1c2b43"/>
+<g font-family="Avenir Next, Futura, DejaVu Sans, sans-serif" font-weight="500" fill="#f2ecdc">
+  <text x="80" y="117" font-size="27">Offline tools for</text>
+  <text x="80" y="153" font-size="27">pet location data</text>
+  <g font-size="22" fill="#c6c9c6">
+    <text x="80" y="244">Validate</text><text x="210" y="244">Measure</text><text x="350" y="244">Summarize</text>
   </g>
+  <text x="76" y="632" font-size="119" font-weight="500" letter-spacing="-5">Roam</text>
+  <text x="80" y="709" font-size="61" font-weight="500" letter-spacing="-2">data SDK</text>
+  <text x="80" y="784" font-size="18" fill="#c6c9c6">TypeScript / Node.js</text>
 </g>
-<rect x="83" y="328" width="272" height="227" rx="13" fill="#f3e3be"/>
-<path d="M111 329 V554 M118 329 V554" fill="none" stroke="#20221c" stroke-width="1.5"/>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="600" fill="#20221c">
-  <text x="142" y="373" font-size="18">JSON history</text>
-  <text x="142" y="418" font-size="25">Coordinates</text>
-  <text x="142" y="460" font-size="25">Timestamps</text>
-  <text x="142" y="502" font-size="25">Segments</text>
-</g>
-<text x="84" y="604" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="19" fill="#d0c2a2">Supplied by your app</text>
-<g fill="none" stroke="#f3e3be" stroke-linecap="round">
-  <path d="M 365 443 C 410 443, 420 395, 502 395" stroke-width="2.5"/>
-  <path d="M 365 443 C 410 443, 420 395, 502 395" stroke-width="1" transform="translate(0 -4)" opacity=".72"/>
-  <path d="M 856 486 C 906 517, 931 433, 994 433" stroke-width="2.5"/>
-  <path d="M 856 486 C 906 517, 931 433, 994 433" stroke-width="1" transform="translate(0 -4)" opacity=".72"/>
-</g>
-<path d="M520 320 C550 292 592 304 620 316 C662 335 688 294 740 308 C792 321 824 325 848 369 C870 408 829 439 843 475 C860 518 835 567 791 574 C738 584 707 549 664 565 C612 586 558 588 526 553 C497 522 508 488 483 460 C460 436 471 406 488 382 C506 358 493 341 520 320 Z" fill="#20221c" stroke="#f3e3be" stroke-width="2.1"/>
-<path d="M520 320 C550 292 592 304 620 316 C662 335 688 294 740 308 C792 321 824 325 848 369 C870 408 829 439 843 475 C860 518 835 567 791 574 C738 584 707 549 664 565 C612 586 558 588 526 553 C497 522 508 488 483 460 C460 436 471 406 488 382 C506 358 493 341 520 320 Z" fill="none" stroke="#f3e3be" stroke-width="1.4" transform="translate(670 442) scale(0.965) translate(-670 -442)" opacity=".85"/>
-<path d="M520 320 C550 292 592 304 620 316 C662 335 688 294 740 308 C792 321 824 325 848 369 C870 408 829 439 843 475 C860 518 835 567 791 574 C738 584 707 549 664 565 C612 586 558 588 526 553 C497 522 508 488 483 460 C460 436 471 406 488 382 C506 358 493 341 520 320 Z" fill="none" stroke="#f3e3be" stroke-width="1.4" transform="translate(670 442) scale(0.93) translate(-670 -442)" opacity=".85"/>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="600" fill="#f3e3be" font-size="25">
-  <g fill="none" stroke="#d0c2a2" stroke-width="1.6"><circle cx="551" cy="385" r="12"/><circle cx="551" cy="440" r="12"/><circle cx="551" cy="495" r="12"/></g>
-  <path d="M551 399 V426 M551 454 V481" stroke="#d0c2a2" fill="none"/>
-  <text x="580" y="393">Validate</text>
-  <text x="580" y="448">Measure</text>
-  <text x="580" y="503">Summarize</text>
-</g>
-<text x="670" y="638" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="22" fill="#f3e3be">summarizeDataset(data)</text>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="500" font-size="19" fill="#d0c2a2">
-  <text x="1010" y="414">Estimated distance</text>
-  <text x="1010" y="518">Recorded duration</text>
-  <text x="1010" y="605">Supplied points</text>
-</g>
-<path d="M1010 643 C1080 670 1135 622 1220 643" stroke="#f3e3be" stroke-width="2" fill="none"/>
-<circle cx="1010" cy="643" r="6" fill="#f3e3be"/>
-<circle cx="1220" cy="643" r="6" fill="#e3bb72"/>
-<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="500" font-size="19" fill="#d0c2a2">
-  <text x="80" y="772">Synthetic example</text>
-  <text x="1320" y="772" text-anchor="end">Local data / No network requests</text>
-</g><g transform="translate(0 0)"><path d="M-18 -15 C-9 -25 1 -20 8 -24 C20 -28 26 -13 20 -3 C14 8 22 18 11 24 C1 31 -8 17 -17 20 C-30 24 -31 10 -23 1 C-17 -5 -25 -8 -18 -15 Z" transform="translate(1168 123) rotate(10) scale(2.05)" fill="none" stroke="#f3e3be" stroke-width="1.2"/><path d="M-18 -15 C-9 -25 1 -20 8 -24 C20 -28 26 -13 20 -3 C14 8 22 18 11 24 C1 31 -8 17 -17 20 C-30 24 -31 10 -23 1 C-17 -5 -25 -8 -18 -15 Z" transform="translate(1180 131) rotate(10) scale(2.05)" fill="none" stroke="#f3e3be" stroke-width=".65" opacity=".8"/></g><rect x="128" y="381" width="4" height="28" rx="2" fill="#bcd4bc" opacity="0"/>
-<rect x="128" y="423" width="4" height="28" rx="2" fill="#bcd4bc" opacity="0"/>
-<rect x="128" y="465" width="4" height="28" rx="2" fill="#bcd4bc" opacity="0"/><g opacity="1"><circle cx="551" cy="385" r="13" fill="#f3e3be"/><path d="M546 385 l4 4 l7 -8" fill="none" stroke="#20221c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g opacity="1"><circle cx="551" cy="440" r="13" fill="#f3e3be"/><path d="M546 440 l4 4 l7 -8" fill="none" stroke="#20221c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g opacity="1"><circle cx="551" cy="495" r="13" fill="#f3e3be"/><path d="M546 495 l4 4 l7 -8" fill="none" stroke="#20221c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><text x="1010" y="388" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="49" font-weight="600" letter-spacing="-1.5" fill="#f3e3be" opacity="1">1.112 km</text><text x="1010" y="388" font-family="DejaVu Sans, sans-serif" font-size="49" fill="#d0c2a2" opacity="0">—</text>
-<text x="1010" y="492" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="47" font-weight="600" letter-spacing="-1.5" fill="#f3e3be" opacity="1">10 min</text><text x="1010" y="492" font-family="DejaVu Sans, sans-serif" font-size="47" fill="#d0c2a2" opacity="0">—</text>
-<text x="1010" y="580" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="34" font-weight="600" letter-spacing="-1.5" fill="#f3e3be" opacity="1">2 points</text><text x="1010" y="580" font-family="DejaVu Sans, sans-serif" font-size="34" fill="#d0c2a2" opacity="0">—</text></svg>
+<text x="80" y="285" font-family="DejaVu Sans Mono, monospace" font-size="20" fill="#c6c9c6">summarizeDataset(data)</text>
+<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-weight="500" font-size="18" fill="#c6c9c6">
+  <text x="965" y="553">Synthetic example</text>
+  <text x="965" y="629">Estimated distance</text>
+  <text x="965" y="720">Recorded duration</text>
+</g><g transform="rotate(0 868 546)">
+    <path d="M847 546 L872 541 C830 459 806 402 761 348 C707 283 685 226 687 163 L654 163 C654 235 681 295 737 365 C779 417 808 478 847 546Z" fill="#c9c9be" transform="rotate(0 868 546)"/>
+    <path d="M847 546 L892 543 C855 458 866 377 927 300 C996 212 1016 156 1017 81 L981 81 C977 150 953 203 894 276 C821 365 807 460 847 546Z" fill="#f2ecdc"/>
+    <path d="M865 546 L892 543 C900 454 944 414 1011 368 C1073 326 1111 272 1124 205 L1090 198 C1074 258 1042 302 985 340 C909 392 868 446 865 546Z" fill="#e3decd" transform="rotate(0 868 546)"/>
+
+  </g><text x="80" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Validate</text>
+<text x="210" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Measure</text>
+<text x="350" y="244" font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="22" font-weight="500" fill="#f2ecdc" opacity="0">Summarize</text><g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="45" font-weight="500" fill="#f2ecdc"><text x="965" y="604" opacity="1">1.112 km</text><text x="965" y="604" opacity="0">—</text></g>
+<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="45" font-weight="500" fill="#f2ecdc"><text x="965" y="695" opacity="1">10 min</text><text x="965" y="695" opacity="0">—</text></g>
+<g font-family="Avenir Next, DejaVu Sans, sans-serif" font-size="24" font-weight="500" fill="#f2ecdc"><text x="965" y="778" opacity="1">2 supplied points</text><text x="965" y="778" opacity="0">—</text></g></svg>
