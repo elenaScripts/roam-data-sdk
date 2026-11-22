@@ -62,6 +62,7 @@ const pointOnCurve = (t, points) => [0, 1].map(axis =>
 const words = [[80, 'Validate'], [210, 'Measure'], [350, 'Summarize']];
 const walkCurve = [[700, 478], [820, 497], [1120, 458], [1255, 478]];
 const dogFrames = JSON.parse(await readFile(join(assets, 'dog-run-frames.json'), 'utf8')).poses;
+const dogCycleMs = 1000;
 if (dogFrames.length !== 10 || dogFrames.some(frame => !/^[MQZ0-9., \\-]+$/.test(frame.path))) {
   throw new Error('Expected ten prepared dog silhouettes');
 }
@@ -95,7 +96,7 @@ function scene() {
 }
 
 function dog(time, still = false) {
-  const index = still ? 6 : Math.floor((time % 500) / 50);
+  const index = still ? 6 : Math.floor((time % dogCycleMs) / (dogCycleMs / dogFrames.length));
   return `<g transform="translate(650 -30) scale(1.6)"><path d="${dogFrames[index].path}" fill="${c.ink}" fill-rule="evenodd"/></g>`;
 }
 
@@ -128,7 +129,7 @@ const posterSvg = svg(backgroundScene + motion(6400, true));
 await writeFile(join(assets, 'sdk-overview.svg'), posterSvg.replace(/[ \t]+$/gm, '') + '\n');
 await sharp(Buffer.from(posterSvg)).png().toFile(join(assets, 'sdk-overview.png'));
 const background = await sharp(Buffer.from(svg(backgroundScene))).png().toBuffer();
-const snapshots = new Map([[0, 'contact'], [100, 'collected'], [200, 'push'], [300, 'flight'], [1000, 'input'], [3400, 'processing'], [6400, 'result']]);
+const snapshots = new Map([[0, 'contact'], [200, 'collected'], [400, 'push'], [600, 'flight'], [1000, 'input'], [3400, 'processing'], [6400, 'result']]);
 const frames = [];
 const delays = [];
 const expectedHashes = [];

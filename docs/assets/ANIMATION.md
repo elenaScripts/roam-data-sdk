@@ -18,7 +18,7 @@ The synthetic result matches `examples/demo.mjs`: two points, approximately 1.11
 
 The visual centers on a dog and its location, with the deep blue ground, warm ivory tones, asymmetrical composition, and open space retained from the earlier poster direction. An original side-profile dog illustration sits above a single schematic trail and location pin. A two-line Roam title and the synthetic walk results keep the purpose of the SDK visible.
 
-The dog uses ten complete silhouette poses over a 500 ms running cycle. Contact, gathering, push-off and airborne extension are represented as whole-body poses, keeping the legs, spine and tail together. The old articulated-leg model has been replaced. The [motion study from the Wellcome Collection](https://wellcomecollection.org/works/x353z8n2) was consulted as a reference for the phases of running.
+The dog uses ten complete silhouette poses over a 1000 ms running cycle, holding each pose for 100 ms. Contact, gathering, push-off and airborne extension are represented as whole-body poses, keeping the legs, spine and tail together. The old articulated-leg model has been replaced. The [motion study from the Wellcome Collection](https://wellcomecollection.org/works/x353z8n2) was consulted as a reference for the phases of running.
 
 The silhouettes were created with the built-in image generation tool; [the prompts](dog-run-prompt.md) and [source sheet](dog-run-sheet.png) are included. The preparation script converts the silhouettes to smoothed SVG paths and aligns their head positions. The final lettering and silhouettes are rendered at full resolution, rather than enlarging the sprite bitmap.
 
