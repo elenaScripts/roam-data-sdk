@@ -16,9 +16,9 @@ The synthetic result matches `examples/demo.mjs`: two points, approximately 1.11
 
 ## Visual direction
 
-The Aalto-inspired composition uses bent birch layers, chalk-white surfaces, sculpted organic outlines, and translucent green and amber glass. Curved architectural ribs and a slowly shifting daylight wash give it a quiet sense of space. The reference photographs guide the materials and forms; they are not included in the public artwork.
+The Aalto-inspired composition uses a near-black ground, warm ivory linework, a visible poster grid, and large, heavy sans-serif typography. A filled ivory input panel balances the outlined processing form and the large result values. Flat fills and precise contours keep the edges clear. The supplied poster references guide the contrast and layout; the artwork is drawn specifically for Roam.
 
-The artwork is drawn in SVG with fixed, readable typography. Glass beads follow eased curved paths, and the small glass form in the corner drifts gently through a continuous loop.
+The artwork is drawn in SVG with fixed, readable typography. Small green and amber data beads follow eased curved paths. A double-contour organic form in the header moves gently through a continuous loop.
 
 ## Reduced motion
 
